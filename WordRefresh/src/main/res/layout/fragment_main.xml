@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity_main$PlaceholderFragment"
+    android:background="#eeeeee">
+
+    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/scrollView"
+                    android:layout_weight="1">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/viewContainerWord"
+                        android:paddingTop="@dimen/activity_vertical_margin"
+                        android:paddingBottom="@dimen/activity_vertical_margin"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        >
+
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/card"
+                            android:padding="10dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewWord"
+                            style="@style/textStyleMainWord"
+                            android:text="instructions"
+                            android:gravity="center"
+                            />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textViewWordPronunciationAndPartOfSpeech"
+                            android:gravity="center"
+                            android:text="(spelling), part of speech"
+                            style="@style/textStyleWordPronunciationAndPartOfSpeech"/>
+
+                    </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card"
+                        android:padding="10dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. Click refresh to get a new word and its definitions. \n \n 2. Every morning you will receive a new word of the day! \n \n 3. Enjoy life."
+                            android:id="@+id/textViewWordDefinition"
+                            style="@style/textStyleWordDescription"
+                            android:gravity="left"
+                            android:padding="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card"
+                        android:padding="10dp"
+                        >
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have fun using the WordRefresh app! Don't forget to rate and review!"
+                            android:id="@+id/textViewWordExample"
+                            style="@style/textStyleWordExampleText"
+                            android:gravity="right"
+                            android:padding="10dp"/>
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="WordRefresh developer"
+                            android:id="@+id/textViewWordExampleSource"
+                            style="@style/textStyleWordExampleSource"
+                            android:gravity="right"
+                            android:padding="10dp"/>
+                </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+
+        <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/progressBar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:visibility="gone"/>
+
+                <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/buttonRefreshWord"
+                        android:src="@drawable/ic_refresh"
+                        android:layout_weight="2"
+                        android:background="@drawable/custom_button"/>
+
+                <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Settings"
+                        android:id="@+id/buttonSettings"
+                        android:src="@drawable/ic_settings"
+                        android:layout_weight="2"
+                        android:background="@drawable/custom_button"/>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+
+        </LinearLayout>
+</LinearLayout>

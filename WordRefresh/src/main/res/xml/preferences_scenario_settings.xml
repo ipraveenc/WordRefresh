@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+            android:title="Settings">
+
+        <CheckBoxPreference
+                android:key="preference_notification"
+                android:title="@string/title_preference_notification"
+                android:summary="@string/summary_preference_notification"
+                android:defaultValue="true"
+                android:enabled="true"/>
+
+        <CheckBoxPreference
+                android:key="preference_google_analytics"
+                android:title="User tracking"
+                android:summary="Opt out from Google Analytics"
+                android:defaultValue="false"
+                android:enabled="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="About">
+
+        <ListPreference
+                android:key="preference_time"
+                android:enabled="false"
+                android:title=""
+                android:summary="This app uses the Wordnik API as well as icons from the Noun project. \n \n Developer homepage \n www.halfapp.com"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>        

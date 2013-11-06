@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <color name="colorDirtyWhite">#efece3</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorDarkGrey">#ff787878</color>
+    <color name="colorLightGrey">#ff9b9b9b</color>
+
+    <style name="textStyleMainWord">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">@color/colorLightGrey</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="textStyleWordPronunciationAndPartOfSpeech">
+        <item name="android:textColor">@color/colorLightGrey</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="textStyleWordDescription">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="textStyleWordExampleText">
+        <item name="android:textColor">@color/colorLightGrey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="textStyleWordExampleSource">
+        <item name="android:textColor">@color/colorLightGrey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
