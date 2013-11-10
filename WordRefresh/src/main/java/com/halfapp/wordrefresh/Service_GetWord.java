@@ -219,7 +219,7 @@ public class Service_GetWord extends IntentService
 
     private boolean isProperDefinition(List<Definition> list)
     {
-        if (list.size() == 0)
+        if (list == null || list.size() == 0)
         {
             return false;
         }

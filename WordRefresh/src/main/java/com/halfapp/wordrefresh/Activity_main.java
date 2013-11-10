@@ -98,10 +98,6 @@ public class Activity_main extends ActionBarActivity implements OnFragmentChange
         PendingIntent pi = PendingIntent.getService(this, pendingIntentId, i, 0);
         AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 86400000, pi);
-
-        Toast.makeText(getApplicationContext(), "Next update will be at \n" +
-        cal.get(Calendar.DAY_OF_MONTH) + "." + cal.get(Calendar.MONTH) + " at " +
-                cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE), Toast.LENGTH_SHORT).show();
     }
 
     public void cancelDailyWordRefresh()
