@@ -74,7 +74,6 @@ public class Fragment_Word extends Fragment
 
         if(sharedPreferences.getBoolean("First time user?", true))
         {
-            sharedPreferences.edit().putBoolean("First time user?", false).commit();
             return true;
         }
 
@@ -102,6 +101,11 @@ public class Fragment_Word extends Fragment
 
                 Tracker tracker = GoogleAnalytics.getInstance(getActivity()).getTracker(DeveloperKeys.GOOGLE_ANALYTICS_KEY);
                 tracker.sendEvent("User action", "Pressed button", "Refresh word", (long)1);
+
+                //  When the user presses the refresh button, it's no longer a first time user
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                if(sharedPreferences.getBoolean("First time user?", true))
+                        sharedPreferences.edit().putBoolean("First time user?", false).commit();
             }
         });
 
