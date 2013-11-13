@@ -4,11 +4,13 @@ import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import net.jeremybrooks.knicker.Knicker;
@@ -101,6 +103,12 @@ public class Service_GetWord extends IntentService
         Intent i = new Intent(TAG);
         i.putExtra(INTENT_RESULT, SERVICE_SUCCESS);
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
+
+        //  When the user recieves first new word, they are no longer a first time user
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if(sharedPreferences.getBoolean("First time user?", true))
+            sharedPreferences.edit().putBoolean("First time user?", false).commit();
+
     }
 
     private void onServiceFailed()
