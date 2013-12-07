@@ -41,7 +41,7 @@ public class Service_GetWord extends IntentService
     private int counter = 0;
 
     //  For every word Wordnik sends you a list, so you gotta work with lists.
-    private List<Word> listRandomWords;
+    private List<Word> listRandomWords = null;
     private List<Definition> listWordDefinitions;
     private List<Pronunciation> listWordPronunciations;
     private List<Example> listWordExamples;
@@ -57,7 +57,10 @@ public class Service_GetWord extends IntentService
     {
         if (isOnline())
         {
-            listRandomWords = getRandomWordsFromWordnik();
+            while (listRandomWords == null)
+            {
+                listRandomWords = getRandomWordsFromWordnik();
+            }
 
             do
             {
