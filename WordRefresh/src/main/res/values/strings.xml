@@ -4,7 +4,24 @@
     <string name="app_name">WordRefresh</string>
     <string name="preference_category_title">Settings</string>
     <string name="title_preference_notification">Daily refresh</string>
-    <string name="summary_preference_notification">Get a nifty notification for every new word of the day.</string>
-    <string name="changelog">- Bug fixes,\n\n- Added this nifty changelog,\n\n Added "time selection"</string>
+    <string name="summary_preference_notification">Receive a new word every day.</string>
+    <string name="changelog">- added THIS changelog\n\n - added the option in settings to set the time of the daily refresh\n\n - bug fixes</string>
 
+    <string-array name="notification_time_entry_values">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
+    <string-array name="notification_time_entries">
+        <item>7 AM</item>
+        <item>8 AM</item>
+        <item>9 AM</item>
+        <item>10 AM </item>
+        <item>11 AM</item>
+    </string-array>
+
+    <string name="notification_time_default">8</string>
 </resources>

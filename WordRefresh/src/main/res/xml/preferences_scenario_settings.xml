@@ -11,6 +11,16 @@
                 android:defaultValue="true"
                 android:enabled="true"/>
 
+        <ListPreference
+                android:key="preference_notification_time"
+                android:title="Refresh time"
+                android:dialogTitle="Set time"
+                android:summary=""
+                android:entries="@array/notification_time_entries"
+                android:entryValues="@array/notification_time_entry_values"
+                android:defaultValue="@string/notification_time_default"
+                android:enabled="true"/>
+
         <CheckBoxPreference
                 android:key="preference_google_analytics"
                 android:title="User tracking"

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.widget.Toast;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.GoogleAnalytics;
@@ -110,18 +111,19 @@ public class Activity_main extends ActionBarActivity implements OnFragmentChange
     private void setDailyWordRefresh()
     {
         Calendar cal = Calendar.getInstance();
+        int refreshTime = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this).getString(Fragment_Settings.KEY_PREFERENCE_DAILY_REFRESH_TIME, "8"));
 
-        if (cal.get(Calendar.HOUR_OF_DAY) >= 8)
+        if (cal.get(Calendar.HOUR_OF_DAY) >= refreshTime)
         {
             cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
-            cal.set(Calendar.HOUR_OF_DAY, 8);
+            cal.set(Calendar.HOUR_OF_DAY, refreshTime);
             cal.set(Calendar.MINUTE, 0);
         }
 
         else
         {
             cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH));
-            cal.set(Calendar.HOUR_OF_DAY, 8);
+            cal.set(Calendar.HOUR_OF_DAY, refreshTime);
             cal.set(Calendar.MINUTE, 0);
         }
 
