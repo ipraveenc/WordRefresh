@@ -5,5 +5,6 @@
     <string name="preference_category_title">Settings</string>
     <string name="title_preference_notification">Daily refresh</string>
     <string name="summary_preference_notification">Get a nifty notification for every new word of the day.</string>
+    <string name="changelog">- Bug fixes,\n\n- Added this nifty changelog,\n\n Added "time selection"</string>
 
 </resources>

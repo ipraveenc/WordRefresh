@@ -3,8 +3,11 @@ package com.halfapp.wordrefresh;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 
@@ -37,6 +40,43 @@ public class Activity_main extends ActionBarActivity implements OnFragmentChange
                     .addToBackStack(null)
                     .commit();
         }
+        
+        if (isNewVersion())
+            showChangeLog();
+    }
+
+    private void showChangeLog()
+    {
+        ChangeLog changeLog = new ChangeLog();
+        changeLog.show(getSupportFragmentManager().beginTransaction(), "Changelog");
+    }
+
+    private boolean isNewVersion()
+    {
+        int savedVersionNumber = PreferenceManager.getDefaultSharedPreferences(this).getInt("Version number", 0);
+        int currentVersionNumber = 0;
+
+        try
+        {
+            currentVersionNumber = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        if (currentVersionNumber > savedVersionNumber)
+        {
+            //  Save current version, so the changelog only shows once
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            editor.putInt("Version number", currentVersionNumber)
+                .commit();
+
+            return true;
+        }
+
+        return false;
     }
 
     @Override
@@ -96,7 +136,7 @@ public class Activity_main extends ActionBarActivity implements OnFragmentChange
 
         PendingIntent pi = PendingIntent.getService(this, pendingIntentId, i, 0);
         AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 86400000, pi);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pi);
     }
 
     public void cancelDailyWordRefresh()

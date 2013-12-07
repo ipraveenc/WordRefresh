@@ -1,5 +1,6 @@
 package com.halfapp.wordrefresh;
 
+import android.app.AlarmManager;
 import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -95,6 +96,8 @@ public class Service_GetWord extends IntentService
         else
         {
             onServiceFailed();
+
+            //TODO: Add repeating alarm, if the user is not online to recieve the new word of the day
         }
     }
 
